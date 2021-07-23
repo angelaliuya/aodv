@@ -1,0 +1,112 @@
+#============================================================================== 
+# THIS TRAFFIC FILE WAS USED FOR MY THESIS!
+#==============================================================================
+#
+# nodes: 15  max conn: 5  send rate: 0.20000000000000001  seed: 0.25 
+# stop time: 900
+#
+
+set opt(stop) 900
+
+#=====================================================
+# src=MN8 dst=host2 	time=7.1461855560290557
+#=====================================================
+set src0 [new Agent/UDP]
+set dst0 [new Agent/Null]
+$ns attach-agent $mobile8 $src0
+$ns attach-agent $host2 $dst0
+$ns connect $src0 $dst0
+$src0 set fid_ 1
+
+set cbr0 [new Application/Traffic/CBR]
+$cbr0 set packetSize_ 512
+$cbr0 set interval_ 0.20000000000000001
+$cbr0 attach-agent $src0
+$ns at 7.1461855560290557 "$cbr0 start"
+$ns at [expr $opt(stop) - 1] "$cbr0 stop"
+$ns at 7.1561855560290557 "$ns trace-annotate \"MN8 ==> host2 at t=7.1461855560290557\""
+$ns at 7.1561855560290557 "$mobile8 add-mark m8 green circle"
+
+
+#=====================================================
+# src=MN13 dst=host2 	time=0.66389342335234092
+#=====================================================
+set src1 [new Agent/UDP]
+set dst1 [new Agent/Null]
+$ns attach-agent $mobile13 $src1
+$ns attach-agent $host2 $dst1
+$ns connect $src1 $dst1
+$src1 set fid_ 2
+
+set cbr1 [new Application/Traffic/CBR]
+$cbr1 set packetSize_ 512
+$cbr1 set interval_ 0.20000000000000001
+$cbr1 attach-agent $src1
+$ns at 0.66389342335234092 "$cbr1 start"
+$ns at [expr $opt(stop) - 1] "$cbr1 stop"
+$ns at 0.67389342335234092 "$ns trace-annotate \"MN13 ==> host2 at t=0.66389342335234092\""
+$ns at 0.67389342335234092 "$mobile13 add-mark m13 green circle"
+
+#=====================================================
+# src=MN12 dst=host2 	time=4.5542469921308788
+#=====================================================
+set src2 [new Agent/UDP]
+set dst2 [new Agent/Null]
+$ns attach-agent $mobile12 $src2
+$ns attach-agent $host2 $dst2
+$ns connect $src2 $dst2
+$src2 set fid_ 3
+
+set cbr2 [new Application/Traffic/CBR]
+$cbr2 set packetSize_ 512
+$cbr2 set interval_ 0.20000000000000001
+$cbr2 attach-agent $src2
+$ns at 4.5542469921308788 "$cbr2 start"
+$ns at [expr $opt(stop) - 1] "$cbr2 stop"
+$ns at 4.5642469921308788 "$ns trace-annotate \"MN12 ==> host2 at t=4.5542469921308788\""
+$ns at 4.5642469921308788 "$mobile12 add-mark m12 green circle"
+
+#=====================================================
+# src=MN14 dst=host1 	time=0.38978419750453164
+#=====================================================
+set src3 [new Agent/UDP]
+set dst3 [new Agent/Null]
+$ns attach-agent $mobile14 $src3
+$ns attach-agent $host1 $dst3
+$ns connect $src3 $dst3
+$src3 set fid_ 4
+
+set cbr3 [new Application/Traffic/CBR]
+$cbr3 set packetSize_ 512
+$cbr3 set interval_ 0.20000000000000001
+$cbr3 attach-agent $src3
+$ns at 0.38978419750453164 "$cbr3 start"
+$ns at [expr $opt(stop) - 1] "$cbr3 stop"
+$ns at 0.39978419750453164 "$ns trace-annotate \"MN14 ==> host1 at t=0.38978419750453164\""
+$ns at 0.39978419750453164 "$mobile14 add-mark m14 green circle"
+
+
+
+
+
+#=====================================================
+# src=MN19 dst=host1 	time=4.9956391216235421
+#=====================================================
+set src4 [new Agent/UDP]
+set dst4 [new Agent/Null]
+$ns attach-agent $mobile19 $src4
+$ns attach-agent $host1 $dst4
+$ns connect $src4 $dst4
+$src4 set fid_ 5
+
+set cbr4 [new Application/Traffic/CBR]
+$cbr4 set packetSize_ 512
+$cbr4 set interval_ 0.20000000000000001
+$cbr4 attach-agent $src4
+$ns at 4.9956391216235421 "$cbr4 start"
+$ns at [expr $opt(stop) - 1] "$cbr4 stop"
+$ns at 4.9966391216235421 "$ns trace-annotate \"MN19 ==> host1 at t=4.9956391216235421\""
+$ns at 4.9966391216235421 "$mobile19 add-mark m19 green circle"
+#
+#Total sources/connections: 5/5
+#
